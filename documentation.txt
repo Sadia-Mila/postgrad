@@ -1,0 +1,66 @@
+Postgres setup
+
+1/npm install -g pnpm (Install pnpm)=> pnpm init
+2/npm install -g typescript for install typescript
+3/ For config File => tsc --init
+4/ For Typescript a src folder has to create in the root and within src make a file named index.ts
+    write a console.log("Hello World")
+5/ tsconfig.json => File layout => uncomment "rootDir": "./src",
+    "outDir": "./dist",
+6/  For Node js git ignore File run ==>> pnpm dlx gitignore Node
+7/ install package.json by using pnpm init -y.    
+8/ Then change package.json. In script put start inplace of test  and in the right side write 
+     "node dist/index.js"     and under it write     
+     "build": "tsc -p .",      Change all of these
+9/ pnpm i tsc-watch -D for dev dependancy 
+    like this 
+    "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc -p .",
+    "dev": "tsc-watch --onSuccess \"node dist/index.js"
+  },
+10/ Then run pnpm run dev for server restart then you can see "hello world"
+11/ instal express by using => pnpm i express     also need type: pnpm i @types/express -D and also run: pnpm i @types/node -D
+12/ in tsconfig.json uncomments the following for node.js:   
+    "lib": ["esnext"],
+    "types": ["node"],
+13/ in tsconfig.json in recommended options there is 
+      "verbatimModuleSyntax": true,    make it false.
+14/ install docker
+
+15/ make file named docker-compose.yml in the root then run 
+and put below in the file===>>>
+services:
+  postgresdb:
+    image: postgres:latest
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: supperauth
+    volumes:
+      - 'postgres_data:/var/lib/postgresql/data'
+
+volumes:
+  postgres_data:
+
+15/ then run ==>> docker compose up  in tarminal
+16/ docker ps for check running container
+17/ docker compose up -d : for docker in background
+https://app.eraser.io/workspace/eSCluAVh1LBjRlNUx4Pr?origin=share
+
+
+
+
+
+Postgre is giving data in table table format as like as row and column whereas in mongodb is giving data in Json format
+
+app =>> ODM(object data mapper)/mongoose (convertor)   ==>>Mongodb   (Hosting in MongoDBAtlas)
+app =>> ORM(Object Relation mapper)/Drizzel (convertor) ==>>PostgreSQL  (Can be Hosted in Suparbase, AWS RDMS, Neao DB, Postgre Install, Docker-VM-Postre Y)
+
+converor list of Data base are : Prisma, Drizzle ORM, Type ORM, MOngoose, Django, Entry Framework etc. 
+
+ProstGreSQL is not only for js. It is also for Python, Rust, Next.js etc. 
+
+mongoose holo ODM Library.
