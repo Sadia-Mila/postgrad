@@ -50,7 +50,22 @@ volumes:
 17/ docker compose up -d : for docker in background
 https://app.eraser.io/workspace/eSCluAVh1LBjRlNUx4Pr?origin=share
 
+===Docker Setup End ===
+============================
+15/ Go to drizzle doc => Maintain Folder and file => Run the pnpm comments
+16/ make .env file as documentations=>DATABASE_URL= postgresql://postgres:postgres@localhost:5432/supperauth => in doc step 2
+17/ Inside the DB make a file called index.ts==In doc step 3
+18/ Go to Schema.ts =>Step 4 but small differance. I prefer cammleCase but DB prefer shank_case
+19/ Go to drizzleconfig.js file => step 5 as it is 
+20/ Go to package.json in script section => "studio": "drizzle-kit studio" for check or see the DB 
+21/ Run the comment pnpm studio for check browser ui.
+22/ now i need to migrate the database but at 1st need to genarate for check then push so again go to package.json file add another script "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate"                  
+23/ run the comment pnpm db:generate file sql genarate and for migrate pnpm db:migrate 
+==== Drizzle Setup End ===
 
+===Auth ====
+24/ instal zod for dto and type script validation = pnpm install zod then make model
 
 
 
