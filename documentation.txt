@@ -65,7 +65,10 @@ https://app.eraser.io/workspace/eSCluAVh1LBjRlNUx4Pr?origin=share
 ==== Drizzle Setup End ===
 
 ===Auth ====
-24/ instal zod for dto and type script validation = pnpm install zod then make model
+24/ instal zod for dto and type script validation ===>>> pnpm install zod 
+25/ make a folder in named app under sec then make a fonder named auth under app
+26/ under app make files controller.ts, models.ts, route.ts
+
 
 
 
